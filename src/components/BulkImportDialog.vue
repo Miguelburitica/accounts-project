@@ -1,10 +1,9 @@
 <template>
   <Dialog 
-    v-model:visible="visible" 
+    v-model:visible="dialogVisible"
     modal 
     header="Bulk Import Transactions" 
     :style="{ width: '600px' }"
-    @update:visible="$emit('update:visible', $event)"
   >
     <div class="flex flex-column gap-3 mb-3" role="group" aria-labelledby="import-instructions">
       <div id="import-instructions" class="text-500 mb-2">
@@ -67,7 +66,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { computed, ref, watch } from 'vue'
 
 import Dialog from 'primevue/dialog'
 import Button from 'primevue/button'
@@ -97,6 +96,12 @@ const emit = defineEmits<{
 }>()
 
 const previewData = ref<ImportTransaction[]>([])
+const dialogVisible = computed({
+  get: () => props.visible,
+  set: (newVal) => {
+    emit('update:visible', newVal)
+  }
+})
 
 watch(() => props.visible, (newValue) => {
   if (newValue) {

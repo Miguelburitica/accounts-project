@@ -1,10 +1,9 @@
 <template>
   <Dialog 
-    v-model:visible="visible" 
+    v-model:visible="dialogVisible" 
     modal 
     header="Add New Transaction" 
     :style="{ width: '500px' }"
-    @update:visible="$emit('update:visible', $event)"
   >
     <form @submit.prevent="handleSubmit" role="form" aria-labelledby="add-transaction-title">
       <div class="flex flex-column gap-3 mb-3">
@@ -106,28 +105,28 @@
           <label for="new-variance-flag" class="font-semibold">Mark as budget variance</label>
         </div>
       </div>
-      
-      <template #footer>
-        <Button 
-          label="Cancel" 
-          icon="pi pi-times" 
-          text 
-          @click="handleCancel"
-          type="button"
-        />
-        <Button 
-          label="Add Transaction" 
-          icon="pi pi-check" 
-          @click="handleSubmit"
-          type="submit"
-        />
-      </template>
     </form>
+
+    <template #footer>
+      <Button 
+        label="Cancel" 
+        icon="pi pi-times" 
+        text 
+        @click="handleCancel"
+        type="button"
+      />
+      <Button 
+        label="Add Transaction" 
+        icon="pi pi-check" 
+        @click="handleSubmit"
+        type="submit"
+      />
+    </template>
   </Dialog>
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { computed, ref, watch } from 'vue'
 
 import Dialog from 'primevue/dialog'
 import Calendar from 'primevue/calendar'
@@ -162,6 +161,12 @@ const emit = defineEmits<{
   'submit': [transaction: TransactionData]
 }>()
 
+const dialogVisible = computed({
+  get: () => props.visible,
+  set: (newVal) => {
+    emit('update:visible', newVal)
+  }
+})
 const transactionData = ref<TransactionData>({
   date: new Date(),
   type: 'expense',
