@@ -38,7 +38,7 @@
       <StatCard
         title="Budget Variance"
         :value="Math.abs(currentPeriodVariance)"
-        :icon="currentPeriodVariance >= 0 ? 'pi-trending-up' : 'pi-trending-down'"
+        :icon="currentPeriodVariance >= 0 ? 'pi-arrow-up-right' : 'pi-arrow-down-right'"
         :variant="currentPeriodVariance >= 0 ? 'green' : 'red'"
         :subtitle="currentPeriodVariance >= 0 ? 'Under budget' : 'Over budget'"
         :subtitle-variant="currentPeriodVariance >= 0 ? 'success' : 'danger'"

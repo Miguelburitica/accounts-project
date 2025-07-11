@@ -41,9 +41,9 @@ const items = ref([
 
 <template>
   <div class="layout-wrapper">
-    <Menubar :model="items" class="mb-4 fixed top-0 left-0">
+    <Menubar :model="items" class="mb-4 sticky top-0 left-0">
       <template #start>
-        <div class="flex items-center gap-2 mr-auto">
+        <div class="flex items-center gap-2">
           <i class="pi pi-calculator text-2xl text-primary"></i>
           <span class="font-bold text-xl text-primary">Financial Manager</span>
         </div>
