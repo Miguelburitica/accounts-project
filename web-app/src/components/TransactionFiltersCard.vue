@@ -60,7 +60,7 @@
         </div>
       </div>
       
-      <div class="flex justify-content-between align-items-center mt-4">
+      <div class="flex justify-content-between items-center mt-4">
         <div class="flex gap-2">
           <Button 
             label="Add Transaction" 

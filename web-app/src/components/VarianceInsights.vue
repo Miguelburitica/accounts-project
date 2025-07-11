@@ -10,12 +10,12 @@
             
             <!-- Biggest Overruns -->
             <section v-if="biggestOverruns.length > 0" aria-labelledby="overruns-heading">
-              <h3 id="overruns-heading" class="font-medium text-900 mb-3 flex align-items-center">
+              <h3 id="overruns-heading" class="font-medium text-900 mb-3 flex items-center">
                 <i class="pi pi-exclamation-triangle text-red-500 mr-2"></i>
                 Biggest Budget Overruns
               </h3>
               <div v-for="item in biggestOverruns" :key="item.category" 
-                   class="flex justify-content-between align-items-center p-3 surface-border border-1 border-round mb-2"
+                   class="flex justify-content-between items-center p-3 surface-border border-1 border-round mb-2"
                    role="listitem">
                 <div>
                   <div class="font-medium text-900">{{ item.category }}</div>
@@ -30,12 +30,12 @@
 
             <!-- Biggest Savings -->
             <section v-if="biggestSavings.length > 0" aria-labelledby="savings-heading">
-              <h3 id="savings-heading" class="font-medium text-900 mb-3 flex align-items-center">
+              <h3 id="savings-heading" class="font-medium text-900 mb-3 flex items-center">
                 <i class="pi pi-check-circle text-green-500 mr-2"></i>
                 Biggest Budget Savings
               </h3>
               <div v-for="item in biggestSavings" :key="item.category" 
-                   class="flex justify-content-between align-items-center p-3 surface-border border-1 border-round mb-2"
+                   class="flex justify-content-between items-center p-3 surface-border border-1 border-round mb-2"
                    role="listitem">
                 <div>
                   <div class="font-medium text-900">{{ item.category }}</div>

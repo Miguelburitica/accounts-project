@@ -1,7 +1,7 @@
 <template>
   <Card>
     <template #title>
-      <div class="flex justify-content-between align-items-center">
+      <div class="flex justify-content-between items-center">
         <h2 class="text-xl font-semibold">All Transactions</h2>
         <Tag :value="`${transactions.length} items`" />
       </div>

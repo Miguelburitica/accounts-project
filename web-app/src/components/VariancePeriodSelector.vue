@@ -1,8 +1,8 @@
 <template>
   <Card>
     <template #content>
-      <div class="flex justify-content-between align-items-center">
-        <div class="flex align-items-center gap-3">
+      <div class="flex justify-content-between items-center">
+        <div class="flex items-center gap-3">
           <label for="period-select" class="font-semibold">Analyze Period:</label>
           <Dropdown 
             id="period-select"

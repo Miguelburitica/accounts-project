@@ -97,7 +97,7 @@
           />
         </div>
 
-        <div class="flex align-items-center gap-2">
+        <div class="flex items-center gap-2">
           <Checkbox 
             id="new-variance-flag"
             v-model="transactionData.variance_flag" 
